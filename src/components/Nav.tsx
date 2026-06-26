@@ -18,8 +18,8 @@ export default function Nav() {
             src="/assets/fp-icon-160.png"
             alt="Logo de FiscalPoint, facturación electrónica e-CF"
             className="nav-logo"
-            width={92}
-            height={92}
+            width={60}
+            height={60}
           />
           <span className="brand-word">Fiscal<b>Point</b></span>
         </a>
