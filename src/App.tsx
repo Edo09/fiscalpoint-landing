@@ -1,6 +1,6 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import ValueProps from './components/ValueProps'
+// import ValueProps from './components/ValueProps'
 import Modalidades from './components/Modalidades'
 import Proceso from './components/Proceso'
 import Planes from './components/Planes'
@@ -19,7 +19,7 @@ export default function App() {
       <Nav />
       <main id="contenido">
         <Hero />
-        <ValueProps />
+        {/* <ValueProps /> */}
         <Modalidades />
         <Proceso />
         <Planes />

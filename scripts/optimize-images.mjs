@@ -75,12 +75,16 @@ async function run() {
     .png({ compressionLevel: 9 })
     .toFile(join(pub, 'apple-touch-icon.png'))
 
-  // ---- Nav / footer logo (displayed ~68px → ship 2x) --------------------
+  // ---- Nav / footer logo --------------------------------------------------
+  // .trim() strips the transparent padding baked into the source so the mark
+  // fills its box → looks bigger at the same display size (slim navbar stays slim).
   await sharp(ICON)
+    .trim()
     .resize(160, 160, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .png({ compressionLevel: 9 })
     .toFile(join(assets, 'fp-icon-160.png'))
   await sharp(ICON)
+    .trim()
     .resize(160, 160, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .webp({ quality: 90 })
     .toFile(join(assets, 'fp-icon-160.webp'))
