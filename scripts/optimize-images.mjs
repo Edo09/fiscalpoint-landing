@@ -28,7 +28,8 @@ const WHITE = { r: 255, g: 255, b: 255, alpha: 1 }
 
 async function run() {
   // ---- Favicon set (from the cloud+document mark) -----------------------
-  for (const size of [16, 32, 48]) {
+  // 48/96 are what Google needs for the search-result favicon (square, >=48px).
+  for (const size of [16, 32, 48, 96]) {
     await sharp(ICON)
       .resize(size, size, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
       .png({ compressionLevel: 9 })
