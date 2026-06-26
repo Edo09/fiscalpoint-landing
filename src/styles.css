@@ -142,6 +142,7 @@ body::before {
 
 /* ---- Buttons ---- */
 .btn { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; border-radius: var(--r-md); border: none; transition: background .12s, transform .12s; }
+.btn:disabled { opacity: .65; cursor: default; pointer-events: none; }
 .btn-primary { background: linear-gradient(180deg, #3a7ee6 0%, var(--accent) 60%, var(--accent-active) 100%); color: var(--on-accent); box-shadow: var(--sh-sm), inset 0 1px 0 rgba(255, 255, 255, 0.22); }
 .btn-primary:hover { background: linear-gradient(180deg, var(--accent) 0%, var(--accent-hover) 60%, var(--accent-active) 100%); transform: translateY(-1px); }
 .btn-primary:active { transform: translateY(0); }

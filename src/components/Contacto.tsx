@@ -2,16 +2,41 @@ import { useState, type FormEvent } from 'react'
 import { WhatsAppIcon, Phone, Mail, Check } from './icons'
 import { WHATSAPP_URL, PHONE_TEL, EMAIL, PHONE_DISPLAY, CONTACT_NAME } from '../data'
 
-function ContactForm() {
-  const [sent, setSent] = useState(false)
+// FormSubmit delivers submissions to EMAIL with no backend.
+// First real submission triggers a one-time activation email (click to confirm).
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${EMAIL}`
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+type Status = 'idle' | 'sending' | 'sent' | 'error'
+
+function ContactForm() {
+  const [status, setStatus] = useState<Status>('idle')
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    // TODO: conectar a tu backend / servicio de correo.
-    setSent(true)
+    const form = e.currentTarget
+    const data = new FormData(form)
+
+    // Honeypot: bots fill hidden field → pretend success, send nothing.
+    if (data.get('_honey')) {
+      setStatus('sent')
+      return
+    }
+
+    setStatus('sending')
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(Object.fromEntries(data)),
+      })
+      if (!res.ok) throw new Error('request failed')
+      setStatus('sent')
+    } catch {
+      setStatus('error')
+    }
   }
 
-  if (sent) {
+  if (status === 'sent') {
     return (
       <div className="form-card">
         <div className="sent">
@@ -44,6 +69,21 @@ function ContactForm() {
         <p style={{ fontSize: 13.5, color: 'var(--text-2)', marginBottom: 20 }}>
           Déjanos tus datos y te contactamos.
         </p>
+
+        {/* FormSubmit config */}
+        <input type="hidden" name="_subject" value="Nueva solicitud de demo · FiscalPoint" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        {/* Honeypot: hidden from humans, catches bots */}
+        <input
+          type="text"
+          name="_honey"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+        />
+
         <div className="form-fields">
           <div className="form-row">
             <label>
@@ -77,8 +117,18 @@ function ContactForm() {
               <option>No estoy seguro / quiero orientación</option>
             </select>
           </label>
-          <button className="btn btn-primary btn-block" type="submit">
-            Solicitar demo
+          {status === 'error' && (
+            <p role="alert" style={{ fontSize: 13, color: 'var(--danger)', margin: 0 }}>
+              No se pudo enviar. Intenta de nuevo o escríbenos por WhatsApp.
+            </p>
+          )}
+          <button
+            className="btn btn-primary btn-block"
+            type="submit"
+            disabled={status === 'sending'}
+            aria-busy={status === 'sending'}
+          >
+            {status === 'sending' ? 'Enviando…' : 'Solicitar demo'}
           </button>
         </div>
       </form>
