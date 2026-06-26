@@ -17,17 +17,29 @@ Abre la URL que imprime Vite (por defecto `http://localhost:5173`).
 
 ## Scripts
 
-| Comando           | Descripción                                  |
-| ----------------- | -------------------------------------------- |
-| `npm run dev`     | Servidor de desarrollo con HMR               |
-| `npm run build`   | Type-check (`tsc -b`) + build de producción  |
-| `npm run preview` | Sirve el build de `dist/` localmente         |
+| Comando                | Descripción                                                                 |
+| ---------------------- | --------------------------------------------------------------------------- |
+| `npm run dev`          | Servidor de desarrollo con HMR                                              |
+| `npm run build`        | Type-check + optimización de imágenes + build cliente + **prerender (SSG)** |
+| `npm run build:client` | Build sólo del cliente (sin prerender), para depurar                       |
+| `npm run optimize:img` | Regenera favicons, logo e imágenes optimizadas desde `assets-src/`          |
+| `npm run preview`      | Sirve el build de `dist/` localmente                                        |
+
+### Build SEO (prerender)
+
+`npm run build` genera HTML estático: tras el build del cliente, `vite build --ssr
+src/entry-server.tsx` produce un bundle de servidor (en `dist-ssr/`, ignorado por git) y
+`scripts/prerender.mjs` inyecta el HTML renderizado + el JSON-LD (Schema.org) dentro de
+`dist/index.html`. El cliente luego **hidrata** ese HTML — mismo diseño y comportamiento,
+pero el contenido y los datos estructurados ya están en el código fuente para buscadores y
+vistas previas (WhatsApp/Facebook). Los datos estructurados se generan desde `src/seo.ts`.
 
 ## Estructura
 
-```
+```text
 fiscalpoint-app/
-├─ public/assets/        Logo y captura del dashboard
+├─ assets-src/           Imágenes originales (fuente para optimize:img; no se publican)
+├─ public/assets/        Logo e imágenes optimizadas (generadas) servidas al cliente
 ├─ src/
 │  ├─ components/        Una sección por archivo (Nav, Hero, Planes, …)
 │  │  └─ icons.tsx       Íconos SVG (Lucide-style) tipados
@@ -46,4 +58,3 @@ fiscalpoint-app/
 - **Formulario de demo:** `src/components/Contacto.tsx` → `handleSubmit` (conéctalo a tu backend o servicio de correo).
 
 > Los testimonios son de muestra; sustitúyelos por clientes reales.
-# fiscalpoint-landing

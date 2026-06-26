@@ -21,7 +21,7 @@ export default function Hero() {
             y empresas con sistema propio.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-primary btn-lg" href={WHATSAPP_URL} target="_blank" rel="noopener">
+            <a className="btn btn-primary btn-lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon size={18} />
               Escríbenos por WhatsApp
             </a>
@@ -54,7 +54,17 @@ export default function Hero() {
               <span className="dot" style={{ background: '#28c840' }} />
               <span className="browser-url">app.fiscalpoint.do</span>
             </div>
-            <img src="/assets/fp-dashboard.png" alt="Dashboard de FiscalPoint" className="browser-shot" />
+            <picture>
+              <source srcSet="/assets/fp-dashboard.webp" type="image/webp" />
+              <img
+                src="/assets/fp-dashboard-opt.png"
+                alt="Panel de FiscalPoint para emitir y consultar facturas electrónicas e-CF ante la DGII"
+                className="browser-shot"
+                width={1280}
+                height={565}
+                decoding="async"
+              />
+            </picture>
           </div>
           <div className="float-badge">
             <span className="icon-badge" style={{ width: 38, height: 38, borderRadius: 10, background: 'var(--success-soft)' }}>

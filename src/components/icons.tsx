@@ -7,6 +7,9 @@ function base({ size = 24, ...props }: IconProps) {
     width: size,
     height: size,
     viewBox: '0 0 24 24',
+    // Icons are decorative (always paired with visible text); hide from a11y tree.
+    'aria-hidden': true,
+    focusable: false,
     ...props,
   }
 }

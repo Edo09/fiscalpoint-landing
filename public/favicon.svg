@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="FiscalPoint">
+  <!-- Cloud (brand navy) -->
+  <path fill="#22386b" d="M20.5 46C12.5 46 6 39.8 6 32.1c0-7 5.4-12.8 12.4-13.8C20.6 12.1 26.6 8 33.6 8c8.4 0 15.4 6.2 16.4 14.2C55.6 23 60 28 60 34c0 6.6-5.5 12-12.3 12H20.5z"/>
+  <!-- Document -->
+  <path fill="#ffffff" d="M24 19h12.5L46 28.5V45a3 3 0 0 1-3 3H24a3 3 0 0 1-3-3V22a3 3 0 0 1 3-3z"/>
+  <!-- Folded corner -->
+  <path fill="#29a9e0" d="M36.5 19 46 28.5h-7a2.5 2.5 0 0 1-2.5-2.5V19z"/>
+  <!-- Text lines -->
+  <g fill="#2a6fdb">
+    <rect x="26" y="31" width="15" height="2.6" rx="1.3"/>
+    <rect x="26" y="36" width="15" height="2.6" rx="1.3"/>
+    <rect x="26" y="41" width="10" height="2.6" rx="1.3"/>
+  </g>
+</svg>

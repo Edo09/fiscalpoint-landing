@@ -44,7 +44,18 @@ export default function Modalidades() {
               <Bullet>Acceso cloud para todo tu equipo</Bullet>
             </ul>
           </div>
-          <img src="/assets/fp-dashboard.png" alt="FiscalPoint Web App" className="mode-shot" />
+          <picture>
+            <source srcSet="/assets/fp-dashboard.webp" type="image/webp" />
+            <img
+              src="/assets/fp-dashboard-opt.png"
+              alt="FiscalPoint Web App: plataforma en la nube para facturación electrónica e-CF"
+              className="mode-shot"
+              width={1280}
+              height={565}
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </div>
 
         {/* API */}

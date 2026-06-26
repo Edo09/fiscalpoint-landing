@@ -20,7 +20,10 @@ const ITEMS = [
 
 export default function ValueProps() {
   return (
-    <section className="container" style={{ paddingTop: 72, paddingBottom: 12 }}>
+    <section className="container" style={{ paddingTop: 72, paddingBottom: 12 }} aria-labelledby="beneficios-title">
+      <h2 id="beneficios-title" className="sr-only">
+        Por qué elegir FiscalPoint para tu facturación electrónica en República Dominicana
+      </h2>
       <div className="grid-cards">
         {ITEMS.map((it) => (
           <div key={it.title} className="card card-lift">

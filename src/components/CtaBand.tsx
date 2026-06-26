@@ -11,7 +11,7 @@ export default function CtaBand() {
           Te acompañamos desde la certificación DGII hasta tu primer e-CF en producción. Empieza hoy.
         </p>
         <div className="cta-actions">
-          <a className="btn btn-white" href={WHATSAPP_URL} target="_blank" rel="noopener">
+          <a className="btn btn-white" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
             <WhatsAppIcon size={18} />
             Escríbenos por WhatsApp
           </a>

@@ -1,13 +1,20 @@
 import { ShieldCheck } from './icons'
-import { WHATSAPP_URL, PHONE_TEL, EMAIL, PHONE_DISPLAY, CONTACT_NAME } from '../data'
+import { WHATSAPP_URL, PHONE_TEL, EMAIL, PHONE_DISPLAY, CONTACT_NAME, APP_URL } from '../data'
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-top">
         <div>
-          <a href="#top" className="footer-brand">
-            <img src="/assets/fp-icon.png" alt="FiscalPoint" className="footer-logo" />
+          <a href="#top" className="footer-brand" aria-label="FiscalPoint — inicio">
+            <img
+              src="/assets/fp-icon-160.png"
+              alt="Logo de FiscalPoint"
+              className="footer-logo"
+              width={46}
+              height={46}
+              loading="lazy"
+            />
             <span className="brand-word" style={{ fontSize: 19 }}>Fiscal<b>Point</b></span>
           </a>
           <p className="footer-about">
@@ -19,8 +26,9 @@ export default function Footer() {
           </span>
         </div>
         <div className="footer-col">
-          <h4>Producto</h4>
+          <h2>Producto</h2>
           <div className="footer-col-links">
+            <a href={APP_URL} target="_blank" rel="noopener noreferrer">Iniciar sesión</a>
             <a href="#modalidades">Modalidades</a>
             <a href="#proceso">Cómo funciona</a>
             <a href="#planes">Planes y precios</a>
@@ -28,9 +36,9 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-col">
-          <h4>Contacto</h4>
+          <h2>Contacto</h2>
           <div className="footer-col-links">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener">WhatsApp · {PHONE_DISPLAY}</a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp · {PHONE_DISPLAY}</a>
             <a href={PHONE_TEL}>Llamar · {PHONE_DISPLAY}</a>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
             <span>{CONTACT_NAME}</span>

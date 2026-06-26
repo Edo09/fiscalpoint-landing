@@ -28,7 +28,7 @@ function ContactForm() {
             style={{ marginTop: 20, padding: '11px 20px', fontSize: 14.5 }}
             href={WHATSAPP_URL}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             Abrir WhatsApp
           </a>
@@ -48,30 +48,30 @@ function ContactForm() {
           <div className="form-row">
             <label>
               <span className="field-label">Nombre</span>
-              <input className="input" required type="text" placeholder="Tu nombre" />
+              <input className="input" required type="text" name="nombre" autoComplete="name" placeholder="Tu nombre" />
             </label>
             <label>
               <span className="field-label">Empresa</span>
-              <input className="input" type="text" placeholder="Tu empresa" />
+              <input className="input" type="text" name="empresa" autoComplete="organization" placeholder="Tu empresa" />
             </label>
           </div>
           <div className="form-row">
             <label>
               <span className="field-label">RNC</span>
-              <input className="input" type="text" placeholder="1-31-xxxxx-x" />
+              <input className="input" type="text" name="rnc" inputMode="numeric" placeholder="1-31-xxxxx-x" />
             </label>
             <label>
               <span className="field-label">Teléfono</span>
-              <input className="input" type="tel" placeholder="809-000-0000" />
+              <input className="input" type="tel" name="telefono" autoComplete="tel" inputMode="tel" placeholder="809-000-0000" />
             </label>
           </div>
           <label>
             <span className="field-label">Correo</span>
-            <input className="input" required type="email" placeholder="tucorreo@empresa.do" />
+            <input className="input" required type="email" name="correo" autoComplete="email" inputMode="email" placeholder="tucorreo@empresa.do" />
           </label>
           <label>
             <span className="field-label">¿Qué modalidad te interesa?</span>
-            <select className="input">
+            <select className="input" name="modalidad" aria-label="¿Qué modalidad te interesa?">
               <option>FiscalPoint Web App</option>
               <option>Integración API</option>
               <option>No estoy seguro / quiero orientación</option>
@@ -98,7 +98,7 @@ export default function Contacto() {
             de certificación. Sin compromiso.
           </p>
           <div className="contact-channels">
-            <a className="channel" href={WHATSAPP_URL} target="_blank" rel="noopener">
+            <a className="channel" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
               <span className="channel-icon" style={{ background: 'var(--success-soft)' }}>
                 <WhatsAppIcon size={22} />
               </span>

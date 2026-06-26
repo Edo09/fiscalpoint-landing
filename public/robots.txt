@@ -1,0 +1,14 @@
+# robots.txt — FiscalPoint
+# Facturación electrónica e-CF / DGII · República Dominicana
+
+User-agent: *
+Allow: /
+
+# Allow major AI / answer engines explicitly (optional, same as default)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://www.fiscalpoint.com.do/sitemap.xml

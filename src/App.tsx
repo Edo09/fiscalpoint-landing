@@ -14,17 +14,20 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <div className="page">
+      <a className="skip-link" href="#contenido">Saltar al contenido</a>
       <Nav />
-      <Hero />
-      <ValueProps />
-      <Modalidades />
-      <Proceso />
-      <Planes />
-      <Requisitos />
-      {/* <Testimonios /> */}
-      <Faq />
-      <Contacto />
-      <CtaBand />
+      <main id="contenido">
+        <Hero />
+        <ValueProps />
+        <Modalidades />
+        <Proceso />
+        <Planes />
+        <Requisitos />
+        {/* <Testimonios /> */}
+        <Faq />
+        <Contacto />
+        <CtaBand />
+      </main>
       <Footer />
     </div>
   )

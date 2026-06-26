@@ -1,5 +1,6 @@
 // Datos de contacto y contenido de la landing de FiscalPoint
 
+export const APP_URL = 'https://fiscalo.vercel.app/'
 export const WHATSAPP_URL = 'https://wa.me/18494011017'
 export const PHONE_TEL = 'tel:+18494011017'
 export const PHONE_DISPLAY = '849-401-1017'

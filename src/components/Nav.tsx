@@ -1,5 +1,5 @@
 import { WhatsAppIcon } from './icons'
-import { WHATSAPP_URL } from '../data'
+import { WHATSAPP_URL, APP_URL } from '../data'
 
 const LINKS = [
   { href: '#modalidades', label: 'Modalidades' },
@@ -11,10 +11,16 @@ const LINKS = [
 
 export default function Nav() {
   return (
-    <nav className="nav">
+    <nav className="nav" aria-label="Navegación principal">
       <div className="nav-inner">
-        <a href="#top" className="nav-brand">
-          <img src="/assets/fp-icon.png" alt="FiscalPoint" className="nav-logo" />
+        <a href="#top" className="nav-brand" aria-label="FiscalPoint — inicio">
+          <img
+            src="/assets/fp-icon-160.png"
+            alt="Logo de FiscalPoint, facturación electrónica e-CF"
+            className="nav-logo"
+            width={68}
+            height={68}
+          />
           <span className="brand-word">Fiscal<b>Point</b></span>
         </a>
         <div className="nav-links">
@@ -24,10 +30,26 @@ export default function Nav() {
             </a>
           ))}
         </div>
-        <a className="btn btn-primary nav-cta" href={WHATSAPP_URL} target="_blank" rel="noopener">
-          <WhatsAppIcon size={16} />
-          WhatsApp
-        </a>
+        <div className="nav-actions">
+          <a
+            className="btn btn-ghost nav-cta nav-login"
+            href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Iniciar sesión
+          </a>
+          <a
+            className="btn btn-primary nav-cta"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Escríbenos por WhatsApp"
+          >
+            <WhatsAppIcon size={16} />
+            WhatsApp
+          </a>
+        </div>
       </div>
     </nav>
   )
