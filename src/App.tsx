@@ -10,6 +10,7 @@ import Faq from './components/Faq'
 import Contacto from './components/Contacto'
 import CtaBand from './components/CtaBand'
 import Footer from './components/Footer'
+import ScrollTop from './components/ScrollTop'
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <CtaBand />
       </main>
       <Footer />
+      <ScrollTop />
     </div>
   )
 }

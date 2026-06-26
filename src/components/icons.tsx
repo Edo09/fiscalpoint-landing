@@ -37,6 +37,14 @@ export function ArrowRight({ size = 24, ...props }: IconProps) {
   )
 }
 
+export function ArrowUp({ size = 24, color = 'currentColor', ...props }: IconProps & { color?: string }) {
+  return (
+    <svg {...base({ size, ...props })} {...strokeProps} stroke={color} strokeWidth={2.4}>
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  )
+}
+
 export function ShieldCheck({ size = 24, color = 'currentColor', ...props }: IconProps & { color?: string }) {
   return (
     <svg {...base({ size, ...props })} {...strokeProps} stroke={color}>
