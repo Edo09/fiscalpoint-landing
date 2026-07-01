@@ -4,51 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary SEO -->
-    <title>Facturación Electrónica e-CF y DGII en RD | FiscalPoint</title>
-    <meta
-      name="description"
-      content="Certifícate ante la DGII y emite e-CF desde la nube. Sistema de facturación electrónica para empresas, PyMEs y contadores en República Dominicana. Plataforma web o integración API."
-    />
-    <link rel="canonical" href="https://www.fiscalpoint.com.do/" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="author" content="FiscalPoint" />
-    <meta name="publisher" content="FiscalPoint" />
+    <!-- Per-route SEO (title, description, canonical, OG, Twitter, JSON-LD) is
+         injected at build time by scripts/prerender.mjs via src/seo.ts. -->
 
-    <!-- Localización (República Dominicana, español) -->
-    <meta name="geo.region" content="DO" />
-    <meta name="geo.placename" content="República Dominicana" />
-    <meta http-equiv="content-language" content="es-DO" />
-    <link rel="alternate" hreflang="es-do" href="https://www.fiscalpoint.com.do/" />
-    <link rel="alternate" hreflang="x-default" href="https://www.fiscalpoint.com.do/" />
-
-    <!-- Open Graph (vistas previas en WhatsApp / Facebook / LinkedIn) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="FiscalPoint" />
-    <meta property="og:locale" content="es_DO" />
-    <meta property="og:title" content="Facturación Electrónica e-CF y DGII en República Dominicana | FiscalPoint" />
-    <meta
-      property="og:description"
-      content="Certifícate ante la DGII y emite comprobantes fiscales electrónicos (e-CF) desde la nube. Para empresas, PyMEs y contadores en RD."
-    />
-    <meta property="og:url" content="https://www.fiscalpoint.com.do/" />
-    <meta property="og:image" content="https://www.fiscalpoint.com.do/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="FiscalPoint — Facturación electrónica e-CF / DGII en República Dominicana" />
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Facturación Electrónica e-CF y DGII en RD | FiscalPoint" />
-    <meta
-      name="twitter:description"
-      content="Certifícate ante la DGII y emite e-CF desde la nube. Facturación electrónica para empresas, PyMEs y contadores en República Dominicana."
-    />
-    <meta name="twitter:image" content="https://www.fiscalpoint.com.do/og-image.png" />
-    <meta name="twitter:image:alt" content="FiscalPoint — Facturación electrónica e-CF / DGII" />
-
-    <!-- Iconos / tema -->
+    <!-- Icons / theme (global) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
@@ -61,9 +20,10 @@
     <meta name="color-scheme" content="light" />
     <meta name="application-name" content="FiscalPoint" />
     <meta name="apple-mobile-web-app-title" content="FiscalPoint" />
+    <link rel="alternate" type="application/rss+xml" title="Blog de FiscalPoint" href="/blog/rss.xml" />
 
-    <!-- LCP: precarga la imagen del dashboard (above the fold) -->
-    <link rel="preload" as="image" href="/assets/fp-dashboard.webp" type="image/webp" fetchpriority="high" />
+    <!-- Fallback title (replaced per route at build; used only in dev) -->
+    <title>FiscalPoint · Facturación electrónica e-CF / DGII</title>
   </head>
   <body>
     <div id="root"></div>

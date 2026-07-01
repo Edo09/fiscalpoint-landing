@@ -58,3 +58,22 @@ fiscalpoint-app/
 - **Formulario de demo:** `src/components/Contacto.tsx` → `handleSubmit` (conéctalo a tu backend o servicio de correo).
 
 > Los testimonios son de muestra; sustitúyelos por clientes reales.
+
+## Blog (SEO)
+
+El blog vive en `/blog` y `/blog/:slug`, más páginas de categoría en
+`/blog/categoria/:cat`. Cada ruta se **prerenderiza a HTML estático** con su
+propio `<title>`, meta, canonical, Open Graph y JSON-LD (`BlogPosting` +
+`BreadcrumbList`). Se genera `sitemap.xml` y un feed RSS en `/blog/rss.xml`.
+
+**Escribir un artículo:**
+
+1. Crea `src/posts/mi-slug.md` (el nombre del archivo es el slug de la URL).
+2. Completa el frontmatter YAML: `title`, `description`, `date`, `updated`,
+   `author`, `category`, `tags`, `coverAlt`, `draft`. La portada (`cover`) se
+   genera automáticamente con la marca; opcional indicar una propia.
+3. `npm run posts` (o `npm run dev` / `npm run build`, que lo ejecutan solo).
+
+`draft: true` excluye el post del build, del sitemap y del RSS. El contenido y
+las portadas se generan a `src/content/posts.generated.ts` y `public/assets/blog/`
+(ambos ignorados por git; se regeneran en cada build).

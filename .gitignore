@@ -5,3 +5,7 @@ dist-ssr
 .DS_Store
 .vscode/*
 !.vscode/extensions.json
+
+# Generated at build (npm run posts / build)
+src/content/posts.generated.ts
+public/assets/blog/

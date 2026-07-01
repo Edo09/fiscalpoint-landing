@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { ShieldCheck } from './icons'
 import { WHATSAPP_URL, PHONE_TEL, EMAIL, PHONE_DISPLAY, CONTACT_NAME, APP_URL } from '../data'
 
@@ -6,7 +7,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-top">
         <div>
-          <a href="#top" className="footer-brand" aria-label="FiscalPoint — inicio">
+          <Link to="/" className="footer-brand" aria-label="FiscalPoint — inicio">
             <img
               src="/assets/fp-icon-160.png"
               alt="Logo de FiscalPoint"
@@ -16,7 +17,7 @@ export default function Footer() {
               loading="lazy"
             />
             <span className="brand-word" style={{ fontSize: 19 }}>Fiscal<b>Point</b></span>
-          </a>
+          </Link>
           <p className="footer-about">
             Facturación electrónica e-CF con cumplimiento DGII para empresas en República Dominicana.
           </p>
@@ -28,11 +29,20 @@ export default function Footer() {
         <div className="footer-col">
           <h2>Producto</h2>
           <div className="footer-col-links">
+            <a href="/#modalidades">Modalidades</a>
+            <a href="/#proceso">Cómo funciona</a>
+            <a href="/#planes">Planes y precios</a>
+            <a href="/#requisitos">Requisitos</a>
             <a href={APP_URL} target="_blank" rel="noopener noreferrer">Iniciar sesión</a>
-            <a href="#modalidades">Modalidades</a>
-            <a href="#proceso">Cómo funciona</a>
-            <a href="#planes">Planes y precios</a>
-            <a href="#requisitos">Requisitos</a>
+          </div>
+        </div>
+        <div className="footer-col">
+          <h2>Recursos</h2>
+          <div className="footer-col-links">
+            <Link to="/blog">Blog</Link>
+            <Link to="/blog/categoria/facturacion-electronica">Facturación electrónica</Link>
+            <Link to="/blog/categoria/dgii">DGII</Link>
+            <a href="/blog/rss.xml">RSS</a>
           </div>
         </div>
         <div className="footer-col">

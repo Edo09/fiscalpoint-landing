@@ -1,19 +1,34 @@
 import { StrictMode } from 'react'
 import { renderToString } from 'react-dom/server'
+import { StaticRouter } from 'react-router-dom/server'
 import App from './App'
-import { buildJsonLdScript } from './seo'
+import { buildHead, buildSitemapXml, buildRssXml } from './seo'
+import { getPublished, getCategories } from './content/posts'
 
 /**
- * Server entry used at build time (vite build --ssr) to prerender the page to
- * static HTML. Returns the app markup plus the JSON-LD <script> to inject into
- * <head>. The client (main.tsx) hydrates this markup — no design or behavior
- * change, the HTML is just present in the source for crawlers and previews.
+ * Server entry used at build time (vite build --ssr) to prerender each route to
+ * static HTML. `renderPage` returns the app markup for a URL plus that route's
+ * full <head> (title, meta, canonical, OG, JSON-LD). The client hydrates it.
  */
-export function render() {
+export function renderPage(url: string) {
   const html = renderToString(
     <StrictMode>
-      <App />
+      <StaticRouter location={url}>
+        <App />
+      </StaticRouter>
     </StrictMode>,
   )
-  return { html, head: buildJsonLdScript() }
+  return { html, head: buildHead(url) }
 }
+
+/** Every path that must be prerendered to a static .html file. */
+export function getRoutes(): string[] {
+  return [
+    '/',
+    '/blog',
+    ...getCategories().map((c) => `/blog/categoria/${c.slug}`),
+    ...getPublished().map((p) => `/blog/${p.slug}`),
+  ]
+}
+
+export { buildSitemapXml, buildRssXml }
