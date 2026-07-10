@@ -1,16 +1,21 @@
+import { useRef } from 'react'
 import { WhatsAppIcon, ArrowRight, ShieldCheck, Cloud, MessageSquare, Check } from './icons'
 import { WHATSAPP_URL } from '../data'
+import { usePointerTilt } from '../motion'
 
 export default function Hero() {
+  const visualRef = useRef<HTMLDivElement>(null)
+  usePointerTilt(visualRef)
+
   return (
     <header id="top" className="hero">
       <div className="hero-glow" />
       <div className="hero-glow-2" />
       <div className="hero-grid">
-        <div>
+        <div className="hero-copy">
           <span className="pill">
             <span className="pill-dot" />
-            Facturación electrónica e-CF · DGII
+            e-CF · DGII · Nuevo FiscalPoint POS
           </span>
           <h1 className="hero-title">
             Factura electrónica<br />sin dolores de cabeza.
@@ -27,6 +32,10 @@ export default function Hero() {
             </a>
             <a className="btn btn-ghost btn-lg" href="#contacto">
               Solicitar demo
+              <ArrowRight size={17} />
+            </a>
+            <a className="btn btn-ghost btn-lg" href="#novedades">
+              Ver POS
               <ArrowRight size={17} />
             </a>
           </div>
@@ -46,7 +55,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="browser">
+        <div className="browser" ref={visualRef}>
           <div className="browser-frame">
             <div className="browser-bar">
               <span className="dot" style={{ background: '#ff5f57' }} />

@@ -1,5 +1,6 @@
 import Shell from '../components/Shell'
 import Hero from '../components/Hero'
+import Novedades from '../components/Novedades'
 import Modalidades from '../components/Modalidades'
 import Proceso from '../components/Proceso'
 import Planes from '../components/Planes'
@@ -12,6 +13,7 @@ export default function Landing() {
   return (
     <Shell>
       <Hero />
+      <Novedades />
       <Modalidades />
       <Proceso />
       <Planes />
