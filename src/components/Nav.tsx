@@ -4,6 +4,7 @@ import { WHATSAPP_URL, APP_URL } from '../data'
 
 // Section links are absolute (`/#id`) so they also work from /blog pages.
 const LINKS = [
+  { href: '/#novedades', label: 'POS' },
   { href: '/#modalidades', label: 'Modalidades' },
   { href: '/#proceso', label: 'Cómo funciona' },
   { href: '/#planes', label: 'Planes' },

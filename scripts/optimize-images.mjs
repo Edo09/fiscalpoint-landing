@@ -6,6 +6,7 @@
 //   assets-src/fp-icon.png   1536x1024  cloud + document mark (transparent)
 //   assets-src/fp-logo.png   1536x1024  mark + "FISCALPOINT" wordmark
 //   assets-src/fp-dashboard.png 1348x595 app screenshot
+//   assets-src/fp-pos-venta.png / fp-pos-cobro.png  ~1910x910 POS screenshots
 //
 // Nothing here changes the design — it only produces smaller renditions that
 // look identical at their real display sizes.
@@ -112,6 +113,29 @@ async function run() {
     .resize(1280, null, { fit: 'inside', withoutEnlargement: true })
     .webp({ quality: 78 })
     .toFile(join(assets, 'fp-dashboard.webp'))
+
+  // ---- POS screenshots (optimized png + webp) ----------------------------
+  const POS_VENTA = join(src, 'fp-pos-venta.png')
+  await sharp(POS_VENTA)
+    .resize(1280, null, { fit: 'inside', withoutEnlargement: true })
+    .png({ compressionLevel: 9, quality: 82 })
+    .toFile(join(assets, 'fp-pos-venta-opt.png'))
+  await sharp(POS_VENTA)
+    .resize(1280, null, { fit: 'inside', withoutEnlargement: true })
+    .webp({ quality: 80 })
+    .toFile(join(assets, 'fp-pos-venta.webp'))
+
+  // Checkout: crop to just the payment modal so it stays legible when overlaid.
+  const POS_COBRO = join(src, 'fp-pos-cobro.png')
+  const cobroCrop = { left: 632, top: 156, width: 638, height: 608 }
+  await sharp(POS_COBRO)
+    .extract(cobroCrop)
+    .png({ compressionLevel: 9, quality: 82 })
+    .toFile(join(assets, 'fp-pos-cobro-opt.png'))
+  await sharp(POS_COBRO)
+    .extract(cobroCrop)
+    .webp({ quality: 82 })
+    .toFile(join(assets, 'fp-pos-cobro.webp'))
 
   console.log('✓ optimized images generated in public/')
 }

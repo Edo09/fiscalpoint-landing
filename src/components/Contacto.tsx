@@ -113,6 +113,7 @@ function ContactForm() {
             <span className="field-label">¿Qué modalidad te interesa?</span>
             <select className="input" name="modalidad" aria-label="¿Qué modalidad te interesa?">
               <option>FiscalPoint Web App</option>
+              <option>FiscalPoint POS</option>
               <option>Integración API</option>
               <option>No estoy seguro / quiero orientación</option>
             </select>

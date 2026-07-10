@@ -22,9 +22,9 @@ const ORG_ID = `${SITE_URL}/#organization`
 const WEBSITE_ID = `${SITE_URL}/#website`
 const WEBAPP_ID = `${SITE_URL}/#webapp`
 
-const HOME_TITLE = 'Facturación Electrónica e-CF y DGII en RD | FiscalPoint'
+const HOME_TITLE = 'Facturación Electrónica e-CF, DGII y POS en RD | FiscalPoint'
 const HOME_DESC =
-  'Certifícate ante la DGII y emite e-CF desde la nube. Sistema de facturación electrónica para empresas, PyMEs y contadores en República Dominicana. Plataforma web o integración API.'
+  'Certifícate ante la DGII, emite e-CF desde la nube y conoce el nuevo FiscalPoint POS. Facturación electrónica para empresas, PyMEs y contadores en República Dominicana.'
 const DESCRIPTION =
   'FiscalPoint te certifica ante la DGII y te da una plataforma en la nube para emitir, recibir y consultar comprobantes fiscales electrónicos (e-CF). Facturación electrónica para PyMEs, contadores y empresas en República Dominicana.'
 
@@ -108,6 +108,14 @@ function organization(): JsonLdNode {
     '@id': ORG_ID,
     name: SITE_NAME,
     url: `${SITE_URL}/`,
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Soluciones FiscalPoint',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'FiscalPoint Web App', url: `${SITE_URL}/` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'FiscalPoint POS' } },
+      ],
+    },
     logo: { '@type': 'ImageObject', url: LOGO, width: 512, height: 512 },
     image: OG_DEFAULT,
     description: DESCRIPTION,
