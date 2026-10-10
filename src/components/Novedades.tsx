@@ -5,7 +5,7 @@ const hasInstagramUrl = INSTAGRAM_URL.trim().length > 0
 
 export default function Novedades() {
   return (
-    <section id="novedades" className="announcement section-tint" aria-labelledby="novedades-title">
+    <section id="novedades" className="announcement band-paper" aria-labelledby="novedades-title">
       <div className="announcement-inner">
         <div className="announcement-copy">
           <span className="eyebrow">Novedades FiscalPoint</span>
@@ -60,26 +60,24 @@ export default function Novedades() {
             </figure>
           </div>
 
-          <div className="instagram-card">
-            <span className="instagram-icon">
-              <InstagramIcon size={22} />
-            </span>
-            <div>
-              <h3>FiscalPoint también llega a Instagram</h3>
-              <p>
-                Usaremos este canal para compartir novedades y contenido útil sobre facturación
-                electrónica en República Dominicana.
-              </p>
-              {hasInstagramUrl ? (
+          {hasInstagramUrl && (
+            <div className="instagram-card">
+              <span className="instagram-icon">
+                <InstagramIcon size={22} />
+              </span>
+              <div>
+                <h3>FiscalPoint también llega a Instagram</h3>
+                <p>
+                  Usaremos este canal para compartir novedades y contenido útil sobre facturación
+                  electrónica en República Dominicana.
+                </p>
                 <a className="instagram-link" href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
                   Seguir en Instagram
                   <ArrowRight size={15} />
                 </a>
-              ) : (
-                <span className="instagram-link is-placeholder">Enlace de Instagram pendiente</span>
-              )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

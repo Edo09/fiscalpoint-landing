@@ -3,7 +3,7 @@ import { REQUISITOS } from '../data'
 
 export default function Requisitos() {
   return (
-    <section id="requisitos" className="section-tint">
+    <section id="requisitos" className="band-sand">
       <div className="container section">
         <div className="req-grid">
           <div>

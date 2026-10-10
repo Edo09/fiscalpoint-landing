@@ -54,10 +54,8 @@ export default function Footer() {
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp · {PHONE_DISPLAY}</a>
             <a href={PHONE_TEL}>Llamar · {PHONE_DISPLAY}</a>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-            {hasInstagramUrl ? (
+            {hasInstagramUrl && (
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
-            ) : (
-              <span>Instagram · enlace pendiente</span>
             )}
             <span>{CONTACT_NAME}</span>
           </div>

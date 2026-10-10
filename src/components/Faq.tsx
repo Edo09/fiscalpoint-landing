@@ -2,7 +2,7 @@ import { FAQS } from '../data'
 
 export default function Faq() {
   return (
-    <section id="faq" className="section-tint">
+    <section id="faq" className="band-paper">
       <div style={{ maxWidth: 760, margin: '0 auto', padding: '80px 24px' }}>
         <div className="section-head" style={{ marginBottom: 40 }}>
           <span className="eyebrow">Preguntas frecuentes</span>

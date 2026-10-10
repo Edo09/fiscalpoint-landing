@@ -139,46 +139,48 @@ function ContactForm() {
 
 export default function Contacto() {
   return (
-    <section id="contacto" className="container section">
-      <div className="contact-grid">
-        <div>
-          <span className="eyebrow">Hablemos</span>
-          <h2 className="req-title">Agenda una evaluación de 30 minutos</h2>
-          <p className="req-lead">
-            Confirmamos modalidad, estado de tu certificado digital, datos disponibles y fecha objetivo
-            de certificación. Sin compromiso.
-          </p>
-          <div className="contact-channels">
-            <a className="channel" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              <span className="channel-icon" style={{ background: 'var(--success-soft)' }}>
-                <WhatsAppIcon size={22} />
-              </span>
-              <span>
-                <small>WhatsApp</small>
-                <strong>{PHONE_DISPLAY}</strong>
-              </span>
-            </a>
-            <a className="channel" href={PHONE_TEL}>
-              <span className="channel-icon" style={{ background: 'var(--accent-soft)' }}>
-                <Phone size={20} color="var(--accent)" />
-              </span>
-              <span>
-                <small>Teléfono · {CONTACT_NAME}</small>
-                <strong>{PHONE_DISPLAY}</strong>
-              </span>
-            </a>
-            <a className="channel" href={`mailto:${EMAIL}`}>
-              <span className="channel-icon" style={{ background: 'var(--accent-soft)' }}>
-                <Mail size={20} color="var(--accent)" />
-              </span>
-              <span>
-                <small>Correo</small>
-                <strong>{EMAIL}</strong>
-              </span>
-            </a>
+    <section id="contacto" className="band-sand">
+      <div className="container section">
+        <div className="contact-grid">
+          <div>
+            <span className="eyebrow">Hablemos</span>
+            <h2 className="req-title">Agenda una evaluación de 30 minutos</h2>
+            <p className="req-lead">
+              Confirmamos modalidad, estado de tu certificado digital, datos disponibles y fecha objetivo
+              de certificación. Sin compromiso.
+            </p>
+            <div className="contact-channels">
+              <a className="channel" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <span className="channel-icon" style={{ background: 'var(--success-soft)' }}>
+                  <WhatsAppIcon size={22} />
+                </span>
+                <span>
+                  <small>WhatsApp</small>
+                  <strong>{PHONE_DISPLAY}</strong>
+                </span>
+              </a>
+              <a className="channel" href={PHONE_TEL}>
+                <span className="channel-icon" style={{ background: 'var(--accent-soft)' }}>
+                  <Phone size={20} color="var(--accent)" />
+                </span>
+                <span>
+                  <small>Teléfono · {CONTACT_NAME}</small>
+                  <strong>{PHONE_DISPLAY}</strong>
+                </span>
+              </a>
+              <a className="channel" href={`mailto:${EMAIL}`}>
+                <span className="channel-icon" style={{ background: 'var(--accent-soft)' }}>
+                  <Mail size={20} color="var(--accent)" />
+                </span>
+                <span>
+                  <small>Correo</small>
+                  <strong>{EMAIL}</strong>
+                </span>
+              </a>
+            </div>
           </div>
+          <ContactForm />
         </div>
-        <ContactForm />
       </div>
     </section>
   )

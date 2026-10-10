@@ -13,10 +13,11 @@ export default function Hero() {
       <div className="hero-glow-2" />
       <div className="hero-grid">
         <div className="hero-copy">
-          <span className="pill">
-            <span className="pill-dot" />
-            e-CF · DGII · Nuevo FiscalPoint POS
-          </span>
+          <a className="pill" href="#novedades">
+            <span className="pill-tag">Nuevo</span>
+            Conoce FiscalPoint POS
+            <ArrowRight size={14} />
+          </a>
           <h1 className="hero-title">
             Factura electrónica<br />sin dolores de cabeza.
           </h1>
@@ -30,26 +31,22 @@ export default function Hero() {
               <WhatsAppIcon size={18} />
               Escríbenos por WhatsApp
             </a>
-            <a className="btn btn-ghost btn-lg" href="#contacto">
+            <a className="btn btn-outline-light btn-lg" href="#contacto">
               Solicitar demo
-              <ArrowRight size={17} />
-            </a>
-            <a className="btn btn-ghost btn-lg" href="#novedades">
-              Ver POS
               <ArrowRight size={17} />
             </a>
           </div>
           <div className="hero-trust">
             <span className="trust-item">
-              <ShieldCheck size={17} color="var(--success)" />
+              <ShieldCheck size={17} color="var(--success-bright)" />
               Cumple con la DGII
             </span>
             <span className="trust-item">
-              <Cloud size={17} color="var(--accent)" />
+              <Cloud size={17} color="var(--on-navy-accent)" />
               100% en la nube
             </span>
             <span className="trust-item">
-              <MessageSquare size={17} color="var(--accent)" />
+              <MessageSquare size={17} color="var(--on-navy-accent)" />
               Soporte en español
             </span>
           </div>

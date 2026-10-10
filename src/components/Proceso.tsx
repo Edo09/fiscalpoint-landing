@@ -1,8 +1,9 @@
 import { STEPS } from '../data'
+import { Check } from './icons'
 
 export default function Proceso() {
   return (
-    <section id="proceso" className="section-tint">
+    <section id="proceso" className="band-navy">
       <div className="container section">
         <div className="section-head" style={{ marginBottom: 52 }}>
           <span className="eyebrow">Proceso de implementación</span>
@@ -13,8 +14,17 @@ export default function Proceso() {
         </div>
         <div className="grid-steps">
           {STEPS.map((step, i) => (
-            <div key={step.title} className="step">
-              <span className={`step-num${step.done ? ' done' : ''}`}>{i + 1}</span>
+            <div key={step.title} className={`step${step.done ? ' step-final' : ''}`}>
+              <span className={`step-num${step.done ? ' done' : ''}`}>
+                {step.done ? (
+                  <>
+                    <Check size={20} />
+                    <span className="sr-only">{i + 1}</span>
+                  </>
+                ) : (
+                  i + 1
+                )}
+              </span>
               <div>
                 <h3 className="step-title">{step.title}</h3>
                 <p className="step-text">{step.text}</p>
