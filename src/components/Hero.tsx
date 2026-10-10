@@ -10,7 +10,7 @@ export default function Hero() {
         <div>
           <span className="pill">
             <span className="pill-dot" />
-            Facturación electrónica e-CF · DGII
+            e-CF · DGII · Nuevo FiscalPoint POS
           </span>
           <h1 className="hero-title">
             Factura electrónica<br />sin dolores de cabeza.
@@ -27,6 +27,10 @@ export default function Hero() {
             </a>
             <a className="btn btn-ghost btn-lg" href="#contacto">
               Solicitar demo
+              <ArrowRight size={17} />
+            </a>
+            <a className="btn btn-ghost btn-lg" href="#novedades">
+              Ver POS
               <ArrowRight size={17} />
             </a>
           </div>

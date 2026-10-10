@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { ShieldCheck } from './icons'
-import { WHATSAPP_URL, PHONE_TEL, EMAIL, PHONE_DISPLAY, CONTACT_NAME, APP_URL } from '../data'
+import { WHATSAPP_URL, PHONE_TEL, EMAIL, PHONE_DISPLAY, CONTACT_NAME, APP_URL, INSTAGRAM_URL } from '../data'
+
+const hasInstagramUrl = INSTAGRAM_URL.trim().length > 0
 
 export default function Footer() {
   return (
@@ -30,6 +32,7 @@ export default function Footer() {
           <h2>Producto</h2>
           <div className="footer-col-links">
             <a href="/#modalidades">Modalidades</a>
+            <a href="/#novedades">FiscalPoint POS</a>
             <a href="/#proceso">Cómo funciona</a>
             <a href="/#planes">Planes y precios</a>
             <a href="/#requisitos">Requisitos</a>
@@ -51,6 +54,11 @@ export default function Footer() {
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp · {PHONE_DISPLAY}</a>
             <a href={PHONE_TEL}>Llamar · {PHONE_DISPLAY}</a>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+            {hasInstagramUrl ? (
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
+            ) : (
+              <span>Instagram · enlace pendiente</span>
+            )}
             <span>{CONTACT_NAME}</span>
           </div>
         </div>
