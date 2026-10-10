@@ -1,6 +1,7 @@
 /* ============================================================
    FiscalPoint landing — design tokens + styles
-   Tokens are from the Fiscalo design system (light theme).
+   Base tokens from the Fiscalo design system, warm/navy theme on top.
+   Spec for merging into the main system: docs/design-system.md
    ============================================================ */
 
 :root {
