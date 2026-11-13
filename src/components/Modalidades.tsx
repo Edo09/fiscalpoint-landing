@@ -32,7 +32,7 @@ export default function Modalidades() {
                 </span>
                 FiscalPoint Web App
               </span>
-              <span className="tag accent">RD$ 1,500 / mes</span>
+              <span className="tag accent">RD$ 2,000 / mes</span>
             </div>
             <p className="mode-desc">
               Ideal si quieres <strong>sustituir o complementar</strong> tu software actual con una
@@ -68,7 +68,7 @@ export default function Modalidades() {
                 </span>
                 Integración API
               </span>
-              <span className="tag neutral">RD$ 1,000 / mes</span>
+              <span className="tag neutral">RD$ 1,500 / mes</span>
             </div>
             <p className="mode-desc">
               Ideal si <strong>ya tienes ERP, POS o sistema contable</strong>. Conecta tu sistema y

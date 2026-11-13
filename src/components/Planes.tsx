@@ -28,7 +28,7 @@ export default function Planes() {
           <h3 className="plan-name">FiscalPoint Web App</h3>
           <p className="plan-desc">Factura, gestiona y reporta desde la nube. Todo incluido.</p>
           <div className="plan-price">
-            <span className="plan-amount num">RD$ 1,500</span>
+            <span className="plan-amount num">RD$ 2,000</span>
             <span className="plan-period">/ mes</span>
           </div>
           <a className="btn btn-primary plan-cta" href={WHATSAPP_URL} target="_blank" rel="noopener">
@@ -41,7 +41,7 @@ export default function Planes() {
           <h3 className="plan-name">Integración API</h3>
           <p className="plan-desc">Para empresas con ERP, POS o contabilidad propia.</p>
           <div className="plan-price">
-            <span className="plan-amount num">RD$ 1,000</span>
+            <span className="plan-amount num">RD$ 1,500</span>
             <span className="plan-period">/ mes</span>
           </div>
           <a className="btn btn-ghost plan-cta" href="#contacto">Conectar mi sistema</a>

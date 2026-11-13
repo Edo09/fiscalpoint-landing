@@ -157,7 +157,7 @@ function softwareApplication(): JsonLdNode {
       'Sistema de facturación electrónica e-CF en la nube con cumplimiento DGII: factura, recibe comprobantes, gestiona clientes, productos y gastos, y consulta reportes.',
     provider: { '@id': ORG_ID },
     areaServed: { '@type': 'Country', name: 'República Dominicana' },
-    offers: { '@type': 'Offer', priceCurrency: 'DOP', price: '1500', availability: 'https://schema.org/InStock' },
+    offers: { '@type': 'Offer', priceCurrency: 'DOP', price: '2000', availability: 'https://schema.org/InStock' },
   }
 }
 
